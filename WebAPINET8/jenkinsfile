@@ -4,12 +4,13 @@
     stages {
         stage('Checkout') {
             steps {
+                // Clonar el repositorio de GitHub que contiene la API ASP.NET
                 git 'https://github.com/BryanVillalpandoTrujillo/API_BRYAN_VILLALPANDO_TRUJILLO.git'
             }
         }
         stage('Restore Dependencies') {
             steps {
-                // Restaurar las dependencias del proyecto
+                // Restaurar las dependencias del proyecto utilizando dotnet
                 bat 'dotnet restore'
             }
         }
@@ -21,18 +22,10 @@
         }
         stage('Test') {
             steps {
-                // Ejecutar las pruebas unitarias
+                // Ejecutar las pruebas unitarias de la API ASP.NET
                 bat 'dotnet test'
             }
         }
-        stage('Deploy') {
-            when {
-                expression { currentBuild.result == 'SUCCESS' }
-            }
-            steps {
-                // Aquí irían los comandos para realizar el despliegue a tu entorno de producción
-                sh 'echo "Deploying to production..."'
-            }
-        }
-    }
-}
+   }}
+}}
+
