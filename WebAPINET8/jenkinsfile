@@ -1,6 +1,38 @@
-﻿namespace WebAPINET8
-{
-    public class jenkinsfile
-    {
+﻿pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/BryanVillalpandoTrujillo/API_BRYAN_VILLALPANDO_TRUJILLO.git'
+            }
+        }
+        stage('Restore Dependencies') {
+            steps {
+                // Restaurar las dependencias del proyecto
+                bat 'dotnet restore'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Compilar la aplicación
+                bat 'dotnet build'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Ejecutar las pruebas unitarias
+                bat 'dotnet test'
+            }
+        }
+        stage('Deploy') {
+            when {
+                expression { currentBuild.result == 'SUCCESS' }
+            }
+            steps {
+                // Aquí irían los comandos para realizar el despliegue a tu entorno de producción
+                sh 'echo "Deploying to production..."'
+            }
+        }
     }
 }
