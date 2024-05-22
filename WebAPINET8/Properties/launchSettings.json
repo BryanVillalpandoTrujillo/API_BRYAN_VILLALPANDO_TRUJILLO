@@ -8,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5088"
+      "applicationUrl": "http://api.bvillalpando.com:5088"
     },
     "https": {
       "commandName": "Project",
@@ -18,7 +18,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7269;http://localhost:5088"
+      "applicationUrl": "https://api.bvillalpando.com:7269;http://api.bvillalpando.com:5088"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -42,21 +42,39 @@
     "WSL": {
       "commandName": "WSL2",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:7269/swagger/index.html",
+      "launchUrl": "https://api.bvillalpando.com:7269/swagger/index.html",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "https://localhost:7269;http://localhost:5088"
+        "ASPNETCORE_URLS": "api.bvillalpando.com:7269;http://api.bvillalpando.com:5088"
       },
-      "distributionName": ""
+      "distributionName": "",
+      "Kubernetes": {
+        "commandName": "Kubernetes",
+        "launchBrowser": true,
+        "applicationUrl": "http://localhost:5173",
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        },
+        "useKubeServiceEnvironmentVariables": true,
+        "service": "webapinet8-service1"
+      },
+      "$schema": "http://json.schemastore.org/launchsettings.json",
+      "iisSettings": {
+        "windowsAuthentication": false,
+        "anonymousAuthentication": true,
+        "iisExpress": {
+          "applicationUrl": "http://api.bvillalpando.com:55868",
+          "sslPort": 44310
+        }
+      }
     }
   },
-  "$schema": "http://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:55868",
-      "sslPort": 44310
+      "applicationUrl": "http://localhost:51131/",
+      "sslPort": 44341
     }
   }
 }

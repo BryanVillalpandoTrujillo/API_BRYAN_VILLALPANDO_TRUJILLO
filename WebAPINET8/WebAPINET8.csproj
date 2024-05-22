@@ -6,15 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>c21db63d-0a98-494f-811a-e232b1537f50</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="jenkinsfile" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Jenkinsfile" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
